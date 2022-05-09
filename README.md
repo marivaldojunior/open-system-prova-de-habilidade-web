@@ -1,6 +1,6 @@
 # open-system-prova-de-habilidade-web
 Desenvolver uma aplicação Web utilizando Angular e .NET 6, com finalidade de criar um banco de sugestões empresarial.
-# Conforme os seguintes requisitos:
+Conforme os seguintes requisitos:
 # REQ1: Menu lateral com as seguintes opções:
 • Cadastro de Sugestões
 • Cadastro de Departamentos
