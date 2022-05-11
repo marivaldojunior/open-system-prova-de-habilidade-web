@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SugestoesAPI.Model
-{
+
     public class Departamento
     {
         public int Id { get; set; }
@@ -10,4 +9,3 @@ namespace SugestoesAPI.Model
         public string Nome { get; set; } = string.Empty;
 
     }
-}
