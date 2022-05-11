@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SugestoesAPI.Data
+namespace SugestoesAPI.Model
 {
     public class Departamento
     {
