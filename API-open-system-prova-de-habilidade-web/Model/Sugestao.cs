@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-/// <summary>
-/// Summary description for Class1
-/// </summary>
 public class Sugestao
 {
 	public int Id { get; set; }
-	public string NameColaborador { get; set; } = string.Empty;
-	public string comentario { get; set; } = string.Empty;
+
+	public string NomeColaborador { get; set; } = string.Empty;
+
+	public string Comentario { get; set; } = string.Empty;
+
+	public int DepartamentoId { get; set; }
+
 	public Departamento? Departamento { get; set; }
 
 }
