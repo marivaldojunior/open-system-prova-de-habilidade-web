@@ -1,3 +1,5 @@
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +11,8 @@ import { DepartamentosComponent } from './departamentos/departamentos.component'
 import { ShowDepartamentosComponent } from './departamentos/show-departamentos/show-departamentos.component';
 import { AddEditDepartamentosComponent } from './departamentos/add-edit-departamentos/add-edit-departamentos.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SugestoesApiService } from './sugestoes-api.service';
+import { DepartamentosApiService } from './departamentos-api.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     NavBarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [SugestoesApiService, DepartamentosApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
