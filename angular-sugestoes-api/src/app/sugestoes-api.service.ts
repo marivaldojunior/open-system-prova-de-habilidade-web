@@ -11,16 +11,16 @@ export class SugestoesApiService {
   constructor(private http: HttpClient) { }
 
   getSugestaoList():Observable<any[]>{
-    return this.http.get<any>(this.sugestoesAPIUrl + '/Sugestaos');
+    return this.http.get<any>(this.sugestoesAPIUrl + '/sugestaos');
   }
 
   addSugestao(data:any){
-    return this.http.post(this.sugestoesAPIUrl + '/Sugestaos', data);
+    return this.http.post(this.sugestoesAPIUrl + '/sugestaos', data);
   }
   updateSugestao(id:number|string, data:any){
-    return this.http.put(this.sugestoesAPIUrl + `/Sugestaos/${id}`, data);
+    return this.http.put(this.sugestoesAPIUrl + `/sugestaos/${id}`, data);
   }
   deleteSugestao(id:number|string){
-    this.http.delete(this.sugestoesAPIUrl + `/Sugestaos/${id}`);
+    this.http.delete(this.sugestoesAPIUrl + `/sugestaos/${id}`);
   }
 }

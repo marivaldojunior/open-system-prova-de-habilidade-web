@@ -11,17 +11,17 @@ export class DepartamentosApiService {
   constructor(private http: HttpClient) { }
 
   getDepartamentoList():Observable<any[]>{
-    return this.http.get<any>(this.departamentosAPIUrl + '/Departamentoes');
+    return this.http.get<any>(this.departamentosAPIUrl + '/departamentoes');
   }
 
   addDepartamento(data:any){
-    return this.http.post(this.departamentosAPIUrl + '/Departamentoes', data);
+    return this.http.post(this.departamentosAPIUrl + '/departamentoes', data);
   }
 
   updateDepartamento(id:number|string, data:any){
-    return this.http.put(this.departamentosAPIUrl + `/Departamentoes/${id}`, data);
+    return this.http.put(this.departamentosAPIUrl + `/departamentoes/${id}`, data);
   }
   deleteDepartamento(id:number|string){
-    this.http.delete(this.departamentosAPIUrl + `/Departamentoes/${id}`);
+    this.http.delete(this.departamentosAPIUrl + `/departamentoes/${id}`);
   }
 }
