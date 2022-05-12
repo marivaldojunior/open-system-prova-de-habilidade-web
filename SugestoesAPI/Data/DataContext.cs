@@ -1,3 +1,4 @@
+//Definição do contexto das classes para criação do banco
 using Microsoft.EntityFrameworkCore;
 
 namespace SugestoesAPI.Data {

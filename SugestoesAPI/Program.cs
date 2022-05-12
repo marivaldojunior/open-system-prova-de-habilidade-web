@@ -1,3 +1,5 @@
+//Desenvolvido por Marivaldo Pereira
+
 using Microsoft.EntityFrameworkCore;
 using SugestoesAPI.Data;
 
@@ -12,11 +14,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//responsável pela conexão com o banco
 builder.Services.AddDbContext<DataContext>(options => 
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); 
 }
 );
+//responsável pela intregação com o front
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: myAllowSpecificOrigins,
@@ -27,6 +31,7 @@ builder.Services.AddCors(options =>
                     .AllowAnyHeader();
         });       
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
