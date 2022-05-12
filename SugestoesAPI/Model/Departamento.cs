@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
         [StringLength(10)]
         public string Sigra { get; set; } = string.Empty;
 
-        [StringLength(30)]
+        [StringLength(50)]
         public string Nome { get; set; } = string.Empty;
 
 }
