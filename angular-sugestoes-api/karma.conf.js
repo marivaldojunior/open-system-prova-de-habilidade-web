@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/CRUD-open-system-prova-de-habilidade-web'),
+      dir: require('path').join(__dirname, './coverage/angular-sugestoes-api'),
       subdir: '.',
       reporters: [
         { type: 'html' },

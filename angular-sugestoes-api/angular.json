@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CRUD-open-system-prova-de-habilidade-web": {
+    "angular-sugestoes-api": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CRUD-open-system-prova-de-habilidade-web",
+            "outputPath": "dist/angular-sugestoes-api",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CRUD-open-system-prova-de-habilidade-web:build:production"
+              "browserTarget": "angular-sugestoes-api:build:production"
             },
             "development": {
-              "browserTarget": "CRUD-open-system-prova-de-habilidade-web:build:development"
+              "browserTarget": "angular-sugestoes-api:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CRUD-open-system-prova-de-habilidade-web:build"
+            "browserTarget": "angular-sugestoes-api:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "CRUD-open-system-prova-de-habilidade-web"
+  "defaultProject": "angular-sugestoes-api"
 }
