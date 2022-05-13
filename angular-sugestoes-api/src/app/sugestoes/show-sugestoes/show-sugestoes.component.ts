@@ -1,7 +1,7 @@
 import { DepartamentosApiService } from './../../departamentos-api.service';
 import { SugestoesApiService } from './../../sugestoes-api.service';
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { AbstractType, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-show-sugestoes',
@@ -21,7 +21,33 @@ export class ShowSugestoesComponent implements OnInit {
   ngOnInit(): void {
     this.sugestaoList$ = this.serviceS.getSugestaoList();
     this.departamentoList$ = this.serviceD.getDepartamentoList();
+    this.refreshDepartamentoMap();
+  }
+  //variaveis (props)
+  modalTitle:string = '';
+  activateAddEditSugestoesComponent:boolean = false;
+  sugestao:any;
+
+  modalAdd(){
+    this.sugestao = {
+      id : 0,
+      nomeColaborador : null,
+      comentario : null,
+      departamentoId : null,
+      justificativa : null
+    };
+    this.modalTitle = "Nova Sugestão";
+    this.activateAddEditSugestoesComponent = true;
   }
 
+  refreshDepartamentoMap(){
+    this.serviceD.getDepartamentoList().subscribe(data =>{
+      this.departamentoList = data;
+
+      for(let i =0; i < data.length; i++){
+        this.departamentosMap.set(this.departamentoList[i].id,this.departamentoList[i].sigra + " - " + this.departamentoList[i].nome)
+      }
+    })
+  }
 
 }

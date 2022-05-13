@@ -1,3 +1,13 @@
+<!-- Button trigger Mostrar departamentos modal -->
+<button type="button" class="btn btn-secondary float float-end m-2" data-bs-toggle="modal" data-bs-target="#DepartamentoModal">
+    Mostrar Departamentos
+</button>
+<!-- Button trigger Add modal -->
+<button type="button" class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#NovaSugestaoModal"
+(click)="modalAdd()">
+    Nova sugestão
+</button>
+
 <table class="table table-striped">
     <thead>
         <th>Id</th>
@@ -10,30 +20,42 @@
         <tr *ngFor="let item of sugestaoList$|async">
             <td>{{item.id}}</td>
             <td>{{item.nomeColaborador}}</td>
-            <td>{{item.departamentoId}}</td>
+            <td>{{departamentosMap.get(item.departamentoId)}}</td>
+            <!--<td>{{item.departamentoId}}</td> -->
             <td>{{item.comentario}}</td>
             <td>{{item.justificativa}}</td>
             
         </tr>
     </tbody>
 </table>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Mostrar Departamentos
-  </button>
+
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Mostrar Departamentos Modal -->
+  <div class="modal fade" id="DepartamentoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Departamentos</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
             <p *ngFor="let departamento of departamentoList$|async">{{departamento.id}} - {{departamento.sigra}} - {{departamento.nome}}</p>
         </div>
-        <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Add Modal sugestao -->
+  <div class="modal fade" id="NovaSugestaoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-add-edit-sugestoes></app-add-edit-sugestoes>
         </div>
       </div>
     </div>

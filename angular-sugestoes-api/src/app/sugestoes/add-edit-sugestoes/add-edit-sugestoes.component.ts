@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,  OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SugestoesApiService } from 'src/app/sugestoes-api.service';
+import { DepartamentosApiService } from 'src/app/departamentos-api.service';
 
 @Component({
   selector: 'app-add-edit-sugestoes',
@@ -6,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-sugestoes.component.css']
 })
 export class AddEditSugestoesComponent implements OnInit {
+
+  sugestaoList$!: Observable<any[]>;
+  departamentoList$! : Observable<any[]>;
 
   constructor() { }
 
