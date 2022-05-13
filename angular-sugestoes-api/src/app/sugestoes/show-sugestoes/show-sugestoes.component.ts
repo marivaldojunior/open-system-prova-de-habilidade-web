@@ -12,7 +12,7 @@ export class ShowSugestoesComponent implements OnInit {
 
   sugestaoList$!: Observable<any[]>;
   departamentoList$!: Observable<any[]>;
-  departamentosList:any=[];
+  departamentoList:any=[];
   //map para mostrar associação entre as tabelas(FK)
   departamentosMap:Map<number,string> = new Map();
 
@@ -20,6 +20,8 @@ export class ShowSugestoesComponent implements OnInit {
 
   ngOnInit(): void {
     this.sugestaoList$ = this.serviceS.getSugestaoList();
+    this.departamentoList$ = this.serviceD.getDepartamentoList();
   }
+
 
 }
