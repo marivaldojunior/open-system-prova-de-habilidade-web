@@ -67,7 +67,6 @@ export class ShowSugestoesComponent implements OnInit {
   modalClose(){
     this.activateAddEditSugestoesComponent = false;
     this.sugestaoList$ = this.serviceS.getSugestaoList();
-
   }
 
   refreshDepartamentoMap(){
