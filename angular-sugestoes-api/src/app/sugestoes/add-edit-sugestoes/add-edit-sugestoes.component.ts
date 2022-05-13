@@ -14,7 +14,7 @@ export class AddEditSugestoesComponent implements OnInit {
   departamentoList$! : Observable<any[]>;
 
 
-  constructor(private serviceS : SugestoesApiService, private serviceD : DepartamentosApiService) { 
+  constructor(private serviceS : SugestoesApiService, private serviceD : DepartamentosApiService) {
 
   }
   @Input() sugestao:any;
@@ -59,6 +59,29 @@ export class AddEditSugestoesComponent implements OnInit {
 
   }
   updateSugestao(){
+    var sugestao = {
+      id : this.id,
+      nomeColaborador : this.nomeColaborador,
+      comentario : this.comentario,
+      departamentoId : this.departamentoId,
+      justificativa : this.justificativa
+    }
+    var id : number = this.id;
+    this.serviceS.updateSugestao(id,sugestao).subscribe(res =>{
+      var closeModalBtn = document.getElementById('add-edit-modal-close');
+      if(closeModalBtn){
+        closeModalBtn.click();
+      }
+      var showUpdateSuccess = document.getElementById('update-success-alert');
+      if(showUpdateSuccess){
+        showUpdateSuccess.style.display = 'block';
+      }
+      setTimeout(function(){
+        if(showUpdateSuccess){
+          showUpdateSuccess.style.display ='none';
+        }
+      },4000);
+    });
 
   }
 
