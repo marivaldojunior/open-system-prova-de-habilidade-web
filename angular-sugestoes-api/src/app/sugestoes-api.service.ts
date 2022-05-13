@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SugestoesApiService {
-  readonly sugestoesAPIUrl = "https://localhost:7233/api"; 
+  readonly sugestoesAPIUrl = "https://localhost:7233/api";
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,6 @@ export class SugestoesApiService {
     return this.http.put(this.sugestoesAPIUrl + `/sugestaos/${id}`, data);
   }
   deleteSugestao(id:number|string){
-    this.http.delete(this.sugestoesAPIUrl + `/sugestaos/${id}`);
+    return this.http.delete(this.sugestoesAPIUrl + `/sugestaos/${id}`);
   }
 }

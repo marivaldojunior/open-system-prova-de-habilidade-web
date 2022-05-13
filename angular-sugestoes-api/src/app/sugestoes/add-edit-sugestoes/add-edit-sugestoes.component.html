@@ -1,7 +1,9 @@
 <form >
     <div class="mb-3">
         <label for="departamentoid" class="form-label">Departamento</label>
-        <select name="departamentoId" id="departamentoId" class="form-control" 
+        <input type="text" class="form-control" [(ngModel)]="departamentoId" name="departamentoId"
+        *ngIf="sugestao.id!=0" disabled>
+        <select name="departamentoId" id="departamentoId" class="form-control"
         [(ngModel)]="departamentoId" *ngIf="sugestao.id==0">
             <option *ngFor="let departamento of departamentoList$|async"
             [value]="departamento.id">
@@ -28,5 +30,5 @@
     <button (click)="updateSugestao()" *ngIf="sugestao.id!=0" class="btn btn-primary">
         Atualizar
     </button>
-    
+
 </form>

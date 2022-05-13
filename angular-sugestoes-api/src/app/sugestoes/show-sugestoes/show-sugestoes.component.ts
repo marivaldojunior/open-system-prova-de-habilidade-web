@@ -39,6 +39,31 @@ export class ShowSugestoesComponent implements OnInit {
     this.modalTitle = "Nova Sugestão";
     this.activateAddEditSugestoesComponent = true;
   }
+  modalEdit(item:any){
+    this.sugestao = item;
+    this.modalTitle = "Edição de Sugestão";
+    this.activateAddEditSugestoesComponent = true;
+  }
+  delete(item:any){
+    if(confirm(`Você tem certeza que quer deletar a Tarefa ${item.id}?`)){
+        var id : number = item.id;
+        this.serviceS.deleteSugestao(id).subscribe(res =>{
+        var closeModalBtn = document.getElementById('add-edit-modal-close');
+        if(closeModalBtn){
+          closeModalBtn.click();
+        }
+        var showDeleteSuccess = document.getElementById('update-success-alert');
+        if(showDeleteSuccess){
+          showDeleteSuccess.style.display = 'block';
+        }
+        setTimeout(function(){
+          if(showDeleteSuccess){
+          showDeleteSuccess.style.display ='none';
+          }
+        },4000);
+      });
+    }
+  }
   modalClose(){
     this.activateAddEditSugestoesComponent = false;
     this.sugestaoList$ = this.serviceS.getSugestaoList();

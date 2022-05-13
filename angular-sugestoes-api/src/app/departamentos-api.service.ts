@@ -22,6 +22,6 @@ export class DepartamentosApiService {
     return this.http.put(this.departamentosAPIUrl + `/departamentoes/${id}`, data);
   }
   deleteDepartamento(id:number|string){
-    this.http.delete(this.departamentosAPIUrl + `/departamentoes/${id}`);
+    return this.http.delete(this.departamentosAPIUrl + `/departamentoes/${id}`);
   }
 }
