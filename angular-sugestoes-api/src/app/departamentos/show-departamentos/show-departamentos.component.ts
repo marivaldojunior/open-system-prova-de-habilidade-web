@@ -33,7 +33,7 @@ export class ShowDepartamentosComponent implements OnInit {
   }
   modalEdit(item:any){
     this.departamento = item;
-    this.modalTitle = "Edição de Sugestão";
+    this.modalTitle = "Edição de Departamento";
     this.activateAddEditDepartamentoComponent = true;
   }
   delete(item:any){
