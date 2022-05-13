@@ -4,7 +4,7 @@
         <select name="departamentoId" id="departamentoId" class="form-control" 
         [(ngModel)]="departamentoId" *ngIf="sugestao.id==0">
             <option *ngFor="let departamento of departamentoList$|async"
-            value="departamento.id">
+            [value]="departamento.id">
             {{departamento.nome}}
             </option>
         </select>
