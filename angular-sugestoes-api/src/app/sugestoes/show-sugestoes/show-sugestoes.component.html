@@ -1,1 +1,19 @@
-<p>show-sugestoes works!</p>
+<table class="table table-stripe">
+    <thead>
+        <th>Id</th>
+        <th>Nome colaborador</th>
+        <th>Departamento para Sugestão</th>
+        <th>Sugestão</th>
+        <th>Justificativa</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of sugestaoList$|async">
+            <td>{{item.id}}</td>
+            <td>{{item.nomeColaborador}}</td>
+            <td>{{item.departamentoId}}</td>
+            <td>{{item.comentario}}</td>
+            <td>{{item.justificativa}}</td>
+            
+        </tr>
+    </tbody>
+</table>

@@ -11,7 +11,10 @@
 		[StringLength(500)]
 		public string Comentario { get; set; } = string.Empty;
 
-		public int DepartamentoId { get; set; }
+		[StringLength(300)]
+		public string Justificativa { get; set; } = string.Empty;
+
+	public int DepartamentoId { get; set; }
 
 		public Departamento? Departamento { get; set; }
 
