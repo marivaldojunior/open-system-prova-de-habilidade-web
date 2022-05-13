@@ -21,3 +21,9 @@ remover ou editar o nome.
 • Gráfico exibindo colaboradores com mais sugestões criadas;
 
 Desenvolvido por Marivaldo Pereira
+Para rodar a api
+Instalar as dependências no Visual Studio
+https://localhost:7233/
+executar o front angular
+npm install
+http://localhost:4200/
