@@ -1,10 +1,32 @@
 <form >
-    <label for="departamentoid" class="form-label">Departamento</label>
-    <select name="departamentoId" id="departamentoId" class="form-control" 
-    [(ngModel)]="departamentoId" *ngIf="sugestao.id==0">
-        <option *ngFor="let departamento of departamentoList$|async"
-        value="departamento.id">
-        {{departamento.nome}}
-        </option>
-    </select>
+    <div class="mb-3">
+        <label for="departamentoid" class="form-label">Departamento</label>
+        <select name="departamentoId" id="departamentoId" class="form-control" 
+        [(ngModel)]="departamentoId" *ngIf="sugestao.id==0">
+            <option *ngFor="let departamento of departamentoList$|async"
+            value="departamento.id">
+            {{departamento.nome}}
+            </option>
+        </select>
+
+    </div>
+    <div class="mb-3">
+        <label for="nomeColaborador" class="form-label">Nome do Colaborador</label>
+        <input type="text" class="form-control" [(ngModel)]="nomeColaborador" name="nomeColaborador">
+    </div>
+    <div class="mb-3">
+        <label for="comentario" class="form-label">Sugestão</label>
+        <input type="text" class="form-control" [(ngModel)]="comentario" name="comentario">
+    </div>
+    <div class="mb-3">
+        <label for="justificativa" class="form-label">Justificativa</label>
+        <input type="text" class="form-control" [(ngModel)]="justificativa" name="justificativa">
+    </div>
+    <button (click)="addSugestao()" *ngIf="sugestao.id==0" class="btn btn-primary">
+        Adicionar
+    </button>
+    <button (click)="updateSugestao()" *ngIf="sugestao.id!=0" class="btn btn-primary">
+        Atualizar
+    </button>
+    
 </form>

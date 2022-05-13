@@ -34,5 +34,11 @@ export class AddEditSugestoesComponent implements OnInit {
     this.departamentoList$ = this.serviceD.getDepartamentoList();
 
   }
+  addSugestao(){
+
+  }
+  updateSugestao(){
+    
+  }
 
 }
