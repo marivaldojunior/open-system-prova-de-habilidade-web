@@ -1,3 +1,6 @@
+import { DepartamentosApiService } from './../../departamentos-api.service';
+import { SugestoesApiService } from './../../sugestoes-api.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowSugestoesComponent implements OnInit {
 
-  constructor() { }
+  sugestaoList$!: Observable<any[]>;
+  departamentoList$!: Observable<any[]>;
+  departamentosList:any=[];
+  //map para mostrar associação entre as tabelas(FK)
+  departamentosMap:Map<number,string> = new Map();
+
+  constructor(private serviceS : SugestoesApiService, private serviceD : DepartamentosApiService) { }
 
   ngOnInit(): void {
+    this.sugestaoList$ = this.serviceS.getSugestaoList();
   }
 
 }
