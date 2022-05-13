@@ -28,7 +28,7 @@ export class ShowDepartamentosComponent implements OnInit {
       nome : null,
       sigra : null
     };
-    this.modalTitle = "Nova Sugestão";
+    this.modalTitle = "Novo Departamento";
     this.activateAddEditDepartamentoComponent = true;
   }
   modalEdit(item:any){
