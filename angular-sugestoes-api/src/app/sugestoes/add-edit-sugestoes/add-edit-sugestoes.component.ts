@@ -13,7 +13,8 @@ export class AddEditSugestoesComponent implements OnInit {
   sugestaoList$!: Observable<any[]>;
   departamentoList$! : Observable<any[]>;
 
-  constructor() { }
+
+  constructor(private serviceS : SugestoesApiService, private serviceD : DepartamentosApiService) { }
 
   ngOnInit(): void {
   }
