@@ -1,8 +1,8 @@
 <form >
     <label for="departamentoid" class="form-label">Departamento</label>
     <select name="departamentoId" id="departamentoId" class="form-control" 
-    [(ngModel)]="departamentoId" *ngIf="departamento.id==0">
-        <option *ngFor="let type of departamentoList$|async"
+    [(ngModel)]="departamentoId" *ngIf="sugestao.id==0">
+        <option *ngFor="let departamento of departamentoList$|async"
         value="departamento.id">
         {{departamento.nome}}
         </option>
