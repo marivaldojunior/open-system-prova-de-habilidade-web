@@ -39,6 +39,11 @@ export class ShowSugestoesComponent implements OnInit {
     this.modalTitle = "Nova Sugestão";
     this.activateAddEditSugestoesComponent = true;
   }
+  modalClose(){
+    this.activateAddEditSugestoesComponent = false;
+    this.sugestaoList$ = this.serviceS.getSugestaoList();
+
+  }
 
   refreshDepartamentoMap(){
     this.serviceD.getDepartamentoList().subscribe(data =>{

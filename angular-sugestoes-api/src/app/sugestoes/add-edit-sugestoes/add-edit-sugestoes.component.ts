@@ -35,10 +35,31 @@ export class AddEditSugestoesComponent implements OnInit {
 
   }
   addSugestao(){
+    var sugestao = {
+      nomeColaborador : this.nomeColaborador,
+      comentario : this.comentario,
+      departamentoId : this.departamentoId,
+      justificativa : this.justificativa
+    }
+    this.serviceS.addSugestao(sugestao).subscribe(res =>{
+      var closeModalBtn = document.getElementById('add-edit-modal-close');
+      if(closeModalBtn){
+        closeModalBtn.click();
+      }
+      var showAddSucess = document.getElementById('add-success-alert');
+      if(showAddSucess){
+        showAddSucess.style.display = 'block';
+      }
+      setTimeout(function(){
+        if(showAddSucess){
+          showAddSucess.style.display ='none';
+        }
+      },4000);
+    });
 
   }
   updateSugestao(){
-    
+
   }
 
 }
