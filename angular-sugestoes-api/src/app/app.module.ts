@@ -13,6 +13,7 @@ import { AddEditDepartamentosComponent } from './departamentos/add-edit-departam
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SugestoesApiService } from './sugestoes-api.service';
 import { DepartamentosApiService } from './departamentos-api.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DepartamentosApiService } from './departamentos-api.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
 
   ],
   providers: [SugestoesApiService, DepartamentosApiService],
