@@ -15,18 +15,18 @@ export class AddEditDepartamentosComponent implements OnInit {
   @Input() departamento:any;
   id : number = 0
   nome : string = "";
-  sigra : string = "";
+  sigla : string = "";
 
   ngOnInit(): void {
     this.id = this.departamento.id;
-    this.nome = this.departamento.nomeColaborador;
-    this.sigra = this.departamento.comentario;
+    this.nome = this.departamento.nome;
+    this.sigla = this.departamento.sigla;
     this.departamentoList$ = this.service.getDepartamentoList();
   }
   addDepartamento(){
     var departamento = {
       nome : this.nome,
-      sigra : this.sigra
+      sigra : this.sigla
     }
     this.service.addDepartamento(departamento).subscribe(res =>{
       var closeModalBtn = document.getElementById('add-edit-modal-close');
@@ -49,7 +49,7 @@ export class AddEditDepartamentosComponent implements OnInit {
     var departamento = {
       id : this.id,
       nome : this.nome,
-      sigra : this.sigra
+      sigra : this.sigla
     }
     var id : number = this.id;
     this.service.updateDepartamento(id,departamento).subscribe(res =>{

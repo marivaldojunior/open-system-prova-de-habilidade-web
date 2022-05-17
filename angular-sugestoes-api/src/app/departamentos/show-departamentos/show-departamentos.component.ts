@@ -26,7 +26,7 @@ export class ShowDepartamentosComponent implements OnInit {
     this.departamento = {
       id : 0,
       nome : null,
-      sigra : null
+      sigla : null
     };
     this.modalTitle = "Novo Departamento";
     this.activateAddEditDepartamentoComponent = true;
